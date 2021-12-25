@@ -1,3 +1,6 @@
+/*
+	used colour name converter library from https://chir.ag/projects/ntc/
+*/
 const simpleColours = [
 	'rgb(22, 160, 133)',
 	'rgb(52, 152, 219)',
@@ -6,11 +9,52 @@ const simpleColours = [
 	'rgb(236, 240, 241)',
 	'rgb(211, 84, 0)',
 	'rgb(241, 196, 15)',
+	'rgb(253, 121, 168)',
+	'rgb(250, 177, 160)',
+	'rgb(116, 185, 255)',
+	'rgb(129, 236, 236)',
+	'rgb(162, 155, 254)',
 ];
 
+// startup
 fillColour();
 
+let navButtonSelectedClass = 'nav-item-selected';
+let simpleNavButton = document.getElementById('simple-gen');
+let hexNavButton = document.getElementById('hex-gen');
+simpleNavButton.classList.toggle(navButtonSelectedClass);
+
+// handle button clicks
+simpleNavButton.addEventListener('click', () => handleNavButtonClick('simple'));
+hexNavButton.addEventListener('click', () => handleNavButtonClick('hex'));
 document.getElementById('generate-btn').addEventListener('click', fillColour);
+
+// type is either 'simple' or 'hex'
+function handleNavButtonClick(type) {
+	if (type !== 'simple' && type !== 'hex') {
+		console.warn('type is not valid: ' + type);
+		return;
+	}
+
+	if (type === 'simple') {
+		if (!simpleNavButton.classList.contains(navButtonSelectedClass)) {
+			simpleNavButton.classList.add(navButtonSelectedClass);
+		}
+
+		if (hexNavButton.classList.contains(navButtonSelectedClass)) {
+			hexNavButton.classList.remove(navButtonSelectedClass);
+		}
+	} else {
+		// type is hex
+		if (!hexNavButton.classList.contains(navButtonSelectedClass)) {
+			hexNavButton.classList.add(navButtonSelectedClass);
+		}
+
+		if (simpleNavButton.classList.contains(navButtonSelectedClass)) {
+			simpleNavButton.classList.remove(navButtonSelectedClass);
+		}
+	}
+}
 
 function fillColour() {
 	let randColour = generateRandomColour(simpleColours);
