@@ -17,12 +17,13 @@ const simpleColours = [
 ];
 
 // startup
-fillColour();
-
 let navButtonSelectedClass = 'nav-item-selected';
 let simpleNavButton = document.getElementById('simple-gen');
 let hexNavButton = document.getElementById('hex-gen');
 simpleNavButton.classList.toggle(navButtonSelectedClass);
+let genType = 'simple'; // simple or hex
+
+fillColour();
 
 // handle button clicks
 simpleNavButton.addEventListener('click', () => handleNavButtonClick('simple'));
@@ -54,21 +55,32 @@ function handleNavButtonClick(type) {
 			simpleNavButton.classList.remove(navButtonSelectedClass);
 		}
 	}
+
+	genType = type;
 }
 
 function fillColour() {
-	let randColour = generateRandomColour(simpleColours);
-	document.body.style.background = randColour;
+	let rgbColour;
+	let hexColour;
+
+	if (genType === 'simple') {
+		rgbColour = getRandomPresetColour(simpleColours);
+		hexColour = rgbToHex(rgbColour);
+	} else {
+		// type is hex
+		hexColour = generateRandomColour();
+		console.log(hexColour);
+	}
+	document.body.style.background = rgbColour ? rgbColour : hexColour;
 
 	// display colour by hex and its colour name
-	let hexColour = rgbToHex(randColour);
 	let colourMatch = ntc.name(hexColour);
 	let colourName = colourMatch[1];
 	document.getElementById('colour-hex').innerHTML = hexColour;
 	document.getElementById('colour-name').innerHTML = colourName;
 }
 
-function generateRandomColour(set) {
+function getRandomPresetColour(set) {
 	let num = set.length;
 	let randColour = document.body.style.background;
 	while (randColour === document.body.style.background) {
@@ -76,6 +88,16 @@ function generateRandomColour(set) {
 		randColour = set[randNum];
 	}
 	return randColour;
+}
+
+function generateRandomColour() {
+	let hex = '#';
+	for (let i = 0; i < 6; i++) {
+		let randNum = Math.floor(Math.random() * 16);
+		let randHex = randNum.toString(16); // convert to hexadecimal
+		hex += randHex;
+	}
+	return hex.toUpperCase();
 }
 
 // convert rgb string 'rgb(r, g, b) to hex string '#xxxxxx'
