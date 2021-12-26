@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+
+* {
+	--black: #1e2529;
+	/* --blue: #1c6fc8; */
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Nunito Sans', 'Segoe UI', sans-serif;
+	background-color: var(--black);
+	position: relative;
+	height: 100vh;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: black;
+	background-color: #fafafa;
+	height: fit-content;
+	width: 50vw;
+	padding: 3rem 0;
+	border-radius: 1.5rem;
+	position: absolute;
+	top: 25%;
+	left: 25%;
+	box-shadow: rgba(0, 0, 0, 0.65) 0px 25px 50px -12px;
+	/* gap: 1rem; */
+}
+
+#header {
+	font-size: 42px;
+	letter-spacing: 0.1rem;
+}
+
+.list {
+	font-size: 28px;
+	padding-bottom: 2vh;
+}
+
+/*
+.list-item a {
+	text-decoration: none;
+	color: dodgerblue;
+	text-decoration: underline;
+}
+
+.list-item a:visited {
+	color: inherit;
+}*/
