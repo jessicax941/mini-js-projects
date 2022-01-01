@@ -1,17 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
 
+:root {
+	--dk-grey: #26292a;
+	--green: #00a86b;
+	--red: #cb4154;
+}
+
 * {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-}
-
-body {
 	font-family: 'Nunito Sans', Arial, Helvetica, sans-serif;
 }
 
 nav {
-	background-color: #26292a;
+	background-color: var(--dk-grey);
 	height: fit-content;
 	width: 100%;
 	position: absolute;
@@ -27,10 +30,11 @@ nav {
 
 .container {
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	height: 100vh;
-	gap: 1rem;
+	gap: 3rem;
 }
 
 #count {
@@ -40,13 +44,68 @@ nav {
 	margin: 1rem;
 }
 
-.buttons {
+.count-with-side-buttons {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+button {
+	background-color: transparent;
+	border-radius: 5px;
+	outline: none;
+	cursor: pointer;
+	transition: all 200ms ease-out;
+}
+
+button:hover {
+	box-shadow: rgba(100, 100, 111, 0.25) 0px 7px 29px 0px;
+}
+
+.side-buttons {
 	display: flex;
 	flex-direction: column;
 	gap: 1.5rem;
 }
 
-button {
-	font-family: 'Nunito Sans', Arial, Helvetica, sans-serif;
+.side-buttons button {
 	font-size: 32px;
+	width: 2.75rem;
+	height: 2.75rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 2px solid black;
+}
+
+#increase-button {
+	color: var(--green);
+	border-color: var(--green);
+}
+
+#increase-button:hover {
+	background: linear-gradient(135deg, #009c63, #00d98a);
+	color: white;
+}
+
+#decrease-button {
+	color: var(--red);
+	border-color: var(--red);
+}
+
+#decrease-button:hover {
+	background: linear-gradient(135deg, #c53649, #da7986);
+	color: white;
+}
+
+#reset-button {
+	font-size: 20px;
+	padding: 0.5rem 0.75rem;
+	border: 1px solid black;
+}
+
+#reset-button:hover {
+	background-color: var(--dk-grey);
+	color: whitesmoke;
 }

@@ -19,8 +19,10 @@ resetButton.addEventListener('click', () => {
 function handleColourChange() {
 	let count = counter.innerText;
 	if (count > 0) {
+		// green green
 		counter.style.color = '#00a86b';
 	} else if (count < 0) {
+		// red text
 		counter.style.color = '#cb4154';
 	} else {
 		// count === 0
