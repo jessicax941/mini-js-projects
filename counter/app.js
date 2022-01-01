@@ -1,5 +1,6 @@
 let increaseButton = document.getElementById('increase-button');
 let decreaseButton = document.getElementById('decrease-button');
+let resetButton = document.getElementById('reset-button');
 let counter = document.getElementById('count');
 
 increaseButton.addEventListener('click', () => {
@@ -8,6 +9,10 @@ increaseButton.addEventListener('click', () => {
 });
 decreaseButton.addEventListener('click', () => {
 	counter.innerText--;
+	handleColourChange();
+});
+resetButton.addEventListener('click', () => {
+	counter.innerText = 0;
 	handleColourChange();
 });
 
