@@ -37,12 +37,34 @@ nav {
 	gap: 3rem;
 }
 
+/* COUNTER */
+
 #count {
-	width: 80px;
+	width: fit-content;
+	min-width: 80px;
 	text-align: center;
 	font-size: 64px;
-	margin: 1rem;
+	margin-right: 2rem;
 }
+
+.jump {
+	animation-duration: 100ms;
+	animation-name: jumpAnim;
+}
+
+@keyframes jumpAnim {
+	from {
+		transform: translate(0, 0);
+	}
+	50% {
+		transform: translate(0, 10px);
+	}
+	to {
+		transform: translate(0, 0);
+	}
+}
+
+/* BUTTONS */
 
 .count-with-side-buttons {
 	display: flex;

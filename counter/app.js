@@ -6,10 +6,12 @@ let counter = document.getElementById('count');
 increaseButton.addEventListener('click', () => {
 	counter.innerText++;
 	handleColourChange();
+	triggerCounterAnim();
 });
 decreaseButton.addEventListener('click', () => {
 	counter.innerText--;
 	handleColourChange();
+	triggerCounterAnim();
 });
 resetButton.addEventListener('click', () => {
 	counter.innerText = 0;
@@ -28,4 +30,12 @@ function handleColourChange() {
 		// count === 0
 		counter.style.color = 'black';
 	}
+}
+
+function triggerCounterAnim() {
+	counter.classList.add('jump');
+
+	setTimeout(() => {
+		counter.classList.remove('jump');
+	}, 100);
 }
