@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Syncopate:wght@700&display=swap');
+
+:root {
+	--title-font: 'Syncopate', sans-serif;
+	--body-font: 'Noto Sans', sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	text-align: center;
+}
+
+.header {
+	position: relative;
+	bottom: 5%;
+	font-family: var(--body-font);
+	font-weight: 900;
+	font-size: 20px;
+	letter-spacing: 2px;
+}
+
+/* .header::before {
+	content: ' ';
+	background-color: darkorange;
+	width: 300px;
+	height: 100px;
+	position: relative;
+	right: 10px;
+	bottom: 10px;
+} */
+
+.reviews-container {
+	font-family: var(--body-font);
+	font-size: 18px;
+	width: 70%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
+	background-color: silver;
+	padding: 2rem 2rem;
+	border-radius: 10px;
+}
+
+.arrow-btn {
+	margin: 1rem;
+	padding: 0.5rem 0.75rem;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	/* background-color: white; */
+}
+
+.arrow-btn .fas {
+	font-size: 24px;
+}
