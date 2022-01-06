@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Syncopate:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 :root {
-	--title-font: 'Syncopate', sans-serif;
-	--body-font: 'Noto Sans', sans-serif;
+	--body-font: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 * {
@@ -14,6 +13,12 @@
 body {
 	width: 100vw;
 	height: 100vh;
+	font-family: var(--body-font);
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 25px;
+	color: #202931;
+	background-color: #fafafa;
 }
 
 main {
@@ -28,44 +33,52 @@ main {
 .header {
 	position: relative;
 	bottom: 5%;
-	font-family: var(--body-font);
 	font-weight: 900;
 	font-size: 20px;
-	letter-spacing: 2px;
+	letter-spacing: 1px;
 }
 
-/* .header::before {
-	content: ' ';
-	background-color: darkorange;
-	width: 300px;
-	height: 100px;
-	position: relative;
-	right: 10px;
-	bottom: 10px;
-} */
-
 .reviews-container {
-	font-family: var(--body-font);
 	font-size: 18px;
-	width: 70%;
+	width: 50%;
+	height: 40%;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
 	gap: 2rem;
-	background-color: silver;
-	padding: 2rem 2rem;
+	background-color: #f2f2f2;
+	padding: 2.5rem 4rem 2rem 4rem;
 	border-radius: 10px;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+
+#review {
+	height: 50%;
+}
+
+.arrows {
+	display: flex;
+	gap: 2rem;
 }
 
 .arrow-btn {
-	margin: 1rem;
-	padding: 0.5rem 0.75rem;
+	padding: 0.5rem 0.5rem;
 	outline: none;
 	border: none;
-	border-radius: 5px;
+	border-radius: 50%;
 	cursor: pointer;
-	/* background-color: white; */
+	background-color: white;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all 200ms ease-in;
+}
+
+.arrow-btn:hover {
+	position: relative;
+	bottom: 8px;
 }
 
 .arrow-btn .fas {
