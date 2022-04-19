@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&family=IBM+Plex+Mono&display=swap');
 
 * {
 	--black: #1e2529;
@@ -36,20 +36,10 @@ main {
 #header {
 	font-size: 42px;
 	letter-spacing: 0.1rem;
+	font-family: 'IBM Plex Mono', monospace;
 }
 
 .list {
 	font-size: 28px;
 	padding-bottom: 2vh;
 }
-
-/*
-.list-item a {
-	text-decoration: none;
-	color: dodgerblue;
-	text-decoration: underline;
-}
-
-.list-item a:visited {
-	color: inherit;
-}*/
